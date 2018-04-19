@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @entry.title %>
+</p>
+
+<p>
+  <strong>Date of occurance:</strong>
+  <%= @entry.date_of_occurance %>
+</p>
+
+<p>
+  <strong>Desc:</strong>
+  <%= @entry.desc %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @entry.user %>
+</p>
+
+<p>
+  <%= image_tag @entry.entry_image(:medium), class: 'img-responsive'%>
+</p>
+
+<%= link_to 'Edit', edit_entry_path(@entry) %> |
+<%= link_to 'Back', entries_path %>
+

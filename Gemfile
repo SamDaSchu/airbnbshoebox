@@ -14,7 +14,9 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'jquery-rails'
-
+gem 'figaro'
+gem 'paperclip'
+gem 'aws-sdk-s3'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

@@ -1,0 +1,36 @@
+<%= form_with(model: entry, local: true) do |form| %>
+  <% if entry.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(entry.errors.count, "error") %> prohibited this entry from being saved:</h2>
+
+      <ul>
+      <% entry.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <h3>Entry title</h3>
+    <%= form.text_field :title, class: 'form-control input-lg', placeholder: 'Electricity Bill' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date_of_occurance %>
+    <%= form.number_field :date_of_occurance, id: :entry_date_of_occurance %>
+  </div>
+
+  <div class="field">
+    <%= form.label :desc %>
+    <%= form.text_area :desc, id: :entry_desc %>
+  </div>
+<div class="form-group">
+    <h5>Upload Image</h5>
+    <%= form.file_field :entry_image, id:"file-input", class: "form-control input-lg"%>
+ </div>  
+    
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
